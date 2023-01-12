@@ -6,13 +6,29 @@ const timer = document.getElementById('timer');
 const timerBtn = document.getElementById("action");
 // add a click event listener to timer button
 timerBtn.addEventListener('click', () => {
-  if (timerBtn.innerHTML === "Start") {
-    timerBtn.innerHTML = "Pause";
+  if (timerBtn.innerHTML === "START") {
+    timerBtn.innerHTML = "PAUSE";
+    countDown();
   } 
-//   else {
-//     timerBtn.innerHTML = "Start";
-//   }
-  // initialize timer's text to 25 mins
+  else if(timerBtn.innerHTML === "PAUSE"){
+    timerBtn.innerHTML = "RESTART";
+  }else if(timerBtn.innerHTML === "RESTART"){
+    countDown();
+  }
+
+//}
+})
+
+})
+// add pause functionality
+// timer should run in background
+// extension: add event listener on 'x' button to close popup
+let distanceLog = [];
+function countDown(){
+    // if(timerBtn.innerHTML === "PAUSE"){
+    //     clearInterval(x);
+    // }
+      // initialize timer's text to 25 mins
   timer.innerHTML = '01:00'; 
   // storing the time when the timer button is clicked
   let oldDateObj = new Date();
@@ -25,8 +41,17 @@ timerBtn.addEventListener('click', () => {
     let now = new Date().getTime();
 
     // Find the distance between now and the countdown date
-    let distance = end - now;
-    console.log('distance', distance);
+    let distance
+    if(!distanceLog.length){
+     distance = end - now;
+     distanceLog.push(distance);
+    }else{
+    distance  = distanceLog[distanceLog.length - 1] - 1000;  //end now + 60 seconds  //distance is how many seconds we have left 
+    distanceLog.push(distance);
+
+    }
+
+    
 
     // Time calculations for minutes and seconds
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -52,22 +77,4 @@ timerBtn.addEventListener('click', () => {
     }
   }
   let x = setInterval(countingTime, 1000);
-})
-
-})
-// add pause functionality
-// timer should run in background
-// extension: add event listener on 'x' button to close popup
-
-//Conection establishmenet
-// let myPort = browser.runtime.connect({name:"port-from-cs"});
-// myPort.postMessage({greeting: "hello from content script"});
-
-// myPort.onMessage.addListener((m) => {
-//   console.log("In content script, received message from background script: ");
-//   console.log(m.greeting);
-// });
-
-// document.body.addEventListener("click", () => {
-//   myPort.postMessage({greeting: "they clicked the page!"});
-// });
+}
