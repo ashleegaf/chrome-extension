@@ -13,7 +13,7 @@ timerBtn.addEventListener('click', () => {
 //     timerBtn.innerHTML = "Start";
 //   }
   // initialize timer's text to 25 mins
-  timer.innerHTML = '1:00'; 
+  timer.innerHTML = '01:00'; 
   // storing the time when the timer button is clicked
   let oldDateObj = new Date();
   // storing the time for setting time to now + 25 minutes
@@ -26,36 +26,48 @@ timerBtn.addEventListener('click', () => {
 
     // Find the distance between now and the countdown date
     let distance = end - now;
+    console.log('distance', distance);
 
     // Time calculations for minutes and seconds
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    if (minutes < 10) {
+      minutes = "0" + minutes.toString();
+    }
+    if (seconds < 10) {
+      seconds = "0" + seconds.toString();
+    }
+
     // Display the time in the timer element
     timer.innerHTML = minutes + " : " + seconds;
   
-    // If the countdown is finished, cancel setInterval() and
-    if (distance <= 0) {  
+    // If the countdown is finished
+    // cancel setInterval(), play alarm, and open popup
+    if (distance < 1000) {  
       clearInterval(x);
+        document.getElementById('audio').play();
+      
       //later: add a pop up "Time for a break"/ sound if possible
-      openTheForm();
+      //openTheForm();
     }
   }
   let x = setInterval(countingTime, 1000);
 })
 
 })
-// add event listener on 'x' button to close popup
 // add pause functionality
+// timer should run in background
+// extension: add event listener on 'x' button to close popup
 
-function openTheForm() {
-   document.getElementById("popup").style.display = "block";
-   let closeButton = document.getElementById("closePopup");
-   closeButton.addEventListener('click', () => {
-   closeTheForm();
-   })
-  }
-  
-  function closeTheForm() {
-   document.getElementById("popup").style.display = "none";
-  }
+//Conection establishmenet
+// let myPort = browser.runtime.connect({name:"port-from-cs"});
+// myPort.postMessage({greeting: "hello from content script"});
+
+// myPort.onMessage.addListener((m) => {
+//   console.log("In content script, received message from background script: ");
+//   console.log(m.greeting);
+// });
+
+// document.body.addEventListener("click", () => {
+//   myPort.postMessage({greeting: "they clicked the page!"});
+// });
