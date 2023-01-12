@@ -3,6 +3,7 @@
     "name": "Help Me Focus, Pomodor!",
     "description": "Run a Pomodoro timer in the background of focus sessions.",
     "version": "1.0",
+    "description": "Run a Pomodoro timer in the background of your focus sessions.",
     "action": {
       "default_popup": "./index.html"
     },
