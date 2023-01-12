@@ -58,8 +58,9 @@ body {
   position: absolute;
   top: 60%;
   left: 25%;
+  width: 150px;
   background-color: white;
   border: none;
-  padding: 16px 32px;
+  padding: 13px;
   font-size: 1.5rem;
 }
