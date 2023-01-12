@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Help Me Focus, Pomodor!",
     "version": "1.0",
-    "description": "Run a Pomodoro timer in the background of focus sessions.",
+    "description": "Run a Pomodoro timer in the background of your focus sessions.",
     "action": {
       "default_popup": "./index.html"
     },

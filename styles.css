@@ -4,7 +4,7 @@ body {
   min-height: 320px;
   border-radius: 10px;
   margin: 0px;
-  padding: 8px 0px;
+  padding: 8px;
   text-size-adjust: 100%;
   font-family: "Open Sans", "Helvetica Neue", "--apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   color: rgb(255, 255, 255);
@@ -17,17 +17,20 @@ body {
   display: flex;
 }
 
-#title-container {
-  width: 200px;
+.item {
+  left: 5%;
+  position: absolute;
+  background-color: rgb(255, 228, 228);
+  width: 300px;
+}
+
+#desc {
+  top: 18%;
+  padding: 8px 0;
 }
 
 #timer-container {
-  top: 30%;
-  left: 10%;
-  position: absolute;
-  background-color: rgb(255, 228, 228);
-  border-radius: 8px;
-  width: 275px;
+  top: 35%;
   height: 200px;
 }
 
@@ -35,35 +38,28 @@ body {
   top: 10%;
   left: 15%;
   position: absolute;
-  color: brown;
+  width: 200px;
   font-size: 4rem;
+}
+
+.brown-color {
+  color: brown;
+}
+
+.bold {
   font-weight: 700;
+}
+
+.border-radius-8px {
+  border-radius: 8px;
 }
 
 #action {
   position: absolute;
   top: 60%;
   left: 25%;
-  color: brown;
   background-color: white;
   border: none;
-  border-radius: 8px;
   padding: 16px 32px;
   font-size: 1.5rem;
-  font-weight: 700;
 }
-
-img {
-  width: 64px;
-}
-
-
-/* * {
-  box-sizing: border-box;
-}
-
-.popup {
-  position: relative;
-  
-  width: 100%;
-} */
