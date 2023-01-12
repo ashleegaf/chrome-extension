@@ -15,22 +15,23 @@
 //       // initialize timer's text to 25 mins
 //      // timer.innerHTML = '01:00'; 
 //       // storing the time when the timer button is clicked
+//       const browser = chrome;
 //       let portFromCS;
+//       let timeFromMain;
 //       function connected(p) {
 //         portFromCS = p;
 //         portFromCS.postMessage({greeting: "hi there content script!"});
-//         portFromCS.onMessage.addListener((m) => {
-//           portFromCS.postMessage({greeting: `In background script, received message from content script: ${m.greeting}`});
+//         portFromCS.onMessage.addListener((m) => {//m is what we received
+//             timeFromMain = m
+//           portFromCS.postMessage({greeting: `In background script, received message from content script: ${m}`});
 //         });
 //       }
       
 //       browser.runtime.onConnect.addListener(connected);
 
 
-
 //       let oldDateObj = new Date();
-//       let end = new Date();
-//       end.setTime(oldDateObj.getTime() + (1 * 60 * 1000));//should be passed from main
+//       let end = timeFromMain;//should be passed from main
 //       // Update the count down every 1 second
 //       function countingTime(){
 //         // Get current time
@@ -51,7 +52,7 @@
 //         }
     
 //         // Display the time in the timer element
-//         timer.innerHTML = minutes + " : " + seconds; //should just store it and PASSS
+//         let passTheUpdate = minutes + " : " + seconds; //should just store it and PASSS
       
 //         // If the countdown is finished
 //         // cancel setInterval(), play alarm, and open popup
@@ -64,12 +65,11 @@
 //         }
 
 //         browser.browserAction.onClicked.addListener(() => {
-//             portFromCS.postMessage({greeting: "they clicked the button!"});
+//             portFromCS.postMessage(passTheUpdate);
 //           });
 //       }
 //       let x = setInterval(countingTime, 1000);
 //    // })
     
 //    // })
-//    //CONNECTION SCRIPT 
    
