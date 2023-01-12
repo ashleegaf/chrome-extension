@@ -1,11 +1,10 @@
 body {
-  margin: 0;
   position: relative;
   min-width: 320px;
   min-height: 320px;
   border-radius: 10px;
   margin: 0px;
-  padding: 0px;
+  padding: 8px 0px;
   text-size-adjust: 100%;
   font-family: "Open Sans", "Helvetica Neue", "--apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   color: rgb(255, 255, 255);
@@ -28,7 +27,7 @@ body {
   position: absolute;
   background-color: rgb(255, 228, 228);
   border-radius: 8px;
-  width: 250px;
+  width: 275px;
   height: 200px;
 }
 
