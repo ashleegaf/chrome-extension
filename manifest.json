@@ -2,14 +2,14 @@
     "manifest_version": 3,
     "name": "Help Me Focus, Pomodor!",
     "version": "1.0",
-    "icons": {
-        "16": "apple16.png",
-        "32": "apple32.png",
-        "48": "apple48.png",
-      "128": "apple128.png"
-    },
     "action": {
       "default_popup": "./index.html"
+    },
+    "icons": {
+        "16": "apple-16.png",
+        "32": "apple-32.png",
+        "48": "apple-48.png",
+      "128": "apple-128.png"
     },
     "content_scripts": [
         {

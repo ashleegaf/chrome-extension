@@ -14,19 +14,29 @@ body {
   text-align: center;
 }
 
+.flex {
+  display: flex;
+}
+
+#title-container {
+  width: 200px;
+}
+
 #timer-container {
+  top: 30%;
+  left: 10%;
+  position: absolute;
   background-color: rgb(255, 228, 228);
   border-radius: 8px;
   width: 250px;
-  height: 150px;
+  height: 200px;
 }
 
 #timer {
-  top: 30%;
+  top: 10%;
   left: 15%;
   position: absolute;
   color: brown;
-  
   font-size: 4rem;
   font-weight: 700;
 }
@@ -37,11 +47,17 @@ body {
   left: 25%;
   color: brown;
   background-color: white;
+  border: none;
   border-radius: 8px;
   padding: 16px 32px;
   font-size: 1.5rem;
   font-weight: 700;
 }
+
+img {
+  width: 64px;
+}
+
 
 /* * {
   box-sizing: border-box;
