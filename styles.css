@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  font-size: 18px;
   position: relative;
   min-width: 320px;
   min-height: 320px;
@@ -8,24 +7,40 @@ body {
   margin: 0px;
   padding: 0px;
   text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   font-family: "Open Sans", "Helvetica Neue", "--apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: rgb(72, 94, 117);
-  background-color: rgb(235, 198, 198);
+  color: rgb(255, 255, 255);
+  background-color: rgb(245, 197, 197);
   display: block;
-  margin: 8px;
+  text-align: center;
 }
-#timer{
-  top: 40%;
-  left: 40%;
+
+#timer-container {
+  background-color: rgb(255, 228, 228);
+  border-radius: 8px;
+  width: 250px;
+  height: 150px;
+}
+
+#timer {
+  top: 30%;
+  left: 15%;
   position: absolute;
   color: brown;
+  
+  font-size: 4rem;
+  font-weight: 700;
 }
 
 #action {
-  top: 50%;
-  left: 40%;
   position: absolute;
+  top: 60%;
+  left: 25%;
+  color: brown;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 /* * {
@@ -34,15 +49,6 @@ body {
 
 .popup {
   position: relative;
-  text-align: center;
+  
   width: 100%;
 } */
-
-.parent.grid {
-  display: grid;
-  place-content: center;  /* shorthand for justify-content and align-content */
-}
-.parent {
-  width: 100vw;
-  height: 50vh;
-}
