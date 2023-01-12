@@ -1,10 +1,13 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Focus",
     "version": "1.0",
+    "action": {
+      "default_popup": "./index.html"
+    },
     "content_scripts": [
         {
-          "matches": ["https://www.youtube.com/*"],
+          "matches": ["http://*/*", "https://*/*"],
           "js": ["./main.js"]
         }
       ]
